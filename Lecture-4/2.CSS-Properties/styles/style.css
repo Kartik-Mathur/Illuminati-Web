@@ -1,0 +1,70 @@
+h2{
+    color: rgb(125, 100, 255);
+}
+
+p{
+    font-size: 24px;
+    line-height: 35px; 
+}
+
+/* h1{
+    font-size: 20px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+h4{
+    font-size: 20px;
+}
+
+h5{
+    font-size: 20px;
+} */
+
+h1,h2,h3,h4,h5{
+    font-size: 30px;
+}
+
+h2{
+    color: orange;
+}
+
+h3{
+    color: magenta;
+}
+
+p{
+    /* margin: 100px; */
+    /* margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 90px;
+    margin-right: 10px; */
+    /* margin: 30px 60px;  */
+    /* margin: top/bottom left/right */
+
+    margin: 30px 80px 40px 10px;
+    padding: 15px;
+    /* font-family: sans-serif; */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+
+    border: 5px solid black;
+}
+
+/* Descendants Selectors */
+em{
+    color: blue;
+}
+p span{
+    background-color: turquoise;
+}
+p span em{
+    background-color: black;
+    color: white;
+}
