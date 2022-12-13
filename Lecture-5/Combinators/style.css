@@ -1,0 +1,11 @@
+div>p{
+    color: indigo;
+}
+
+/* li+li{
+    color: orangered;
+} */
+
+li~li{
+    color: orangered;
+}

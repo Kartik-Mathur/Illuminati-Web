@@ -1,0 +1,14 @@
+.myList{
+    border: 2px solid black;
+    width: 260px;
+    margin: auto;
+}
+
+.list-item{
+    border: 1px solid black;
+    background-color: rgb(253, 155, 119);
+}
+
+li+li{
+    margin-top: 5px;
+}

@@ -1,0 +1,43 @@
+div{
+    color: white;
+    background-color: blueviolet;
+    font-weight: 800;
+    width: 360px;
+    margin: 10px auto;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.myclass{
+    color: white;
+    background-color: royalblue;
+    font-weight: 800;
+    width: 360px;
+    margin: 10px auto;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.myclass-1{
+    font-size: 36px;
+}
+
+#div1{
+    color: white;
+    background-color: orangered;
+    font-weight: 800;
+    width: 360px;
+    margin: 10px auto;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+div{
+    color: white;
+    background-color: grey;
+    font-weight: 800;
+    width: 360px;
+    margin: 10px auto;
+    border: 2px solid black;
+    padding: 5px;
+}
