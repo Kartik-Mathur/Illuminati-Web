@@ -21,7 +21,7 @@ a:hover{
 }
 
 .container{
-    width: 80%;
+    width: 90%;
     margin: auto;
     /* border: 2px solid green; */
 }
@@ -33,11 +33,11 @@ a:hover{
 }
 
 .main-header{
-    border: 2px solid tomato;
     margin: 10px 0px;
 }
 
 .author-image{
+    border: 2px solid teal;
     width: 100%;
 }
 
@@ -47,9 +47,13 @@ a:hover{
     float: left;
 }
 
+.about-author{
+    margin-left: 10px;
+}
+
 .side-b{
     /* border: 1px solid black; */
-    width: 79%;
+    width: 77%;
     float: right;
 }
 
@@ -70,7 +74,8 @@ a:hover{
 }
 
 .author-article{
-    width: 450px;
+    margin-top: 50px;
+    width: 500px;
 }
 
 #btn{
@@ -85,4 +90,60 @@ a:hover{
 
 .article{
     position: relative;
+}
+
+.nav-items-b{
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+}
+
+.nav-items-a{
+    float: left;
+    width: 20%;
+}
+.nav::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.author-article{
+    float:left;
+    width: 70%;
+}
+
+.side-articles{
+    margin-top:50px;
+    float: right;
+    width: 27%;
+    border: 1px solid teal;
+    padding: 10px;
+}
+
+.holi-image{
+    width: 100%;
+}
+
+.related-articles-image{
+    float: left;
+    width: 40%;
+    /* border: 1px solid black; */
+}
+
+.related-articles-content{
+    float: right;
+    width: 55%;
+    /* border: 1px solid black; */
+}
+
+.related-articles::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.related-articles{
+    margin-top: 10px;
 }
