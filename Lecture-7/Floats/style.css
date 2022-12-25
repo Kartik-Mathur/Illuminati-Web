@@ -1,0 +1,38 @@
+.div{
+    border: 2px solid black;
+}
+
+.side-a,
+.side-b{
+    /* border: 2px solid black; */
+    margin: 10px;
+}
+
+.christmas-image{
+    width: 100%;
+}
+
+.side-a,
+.side-b{
+    min-height: 50px;
+}
+
+.side-a{
+    width: 30%;
+    float: left;
+}
+
+.side-b{
+    width: 60%;
+    float: right;
+}
+
+.clearfix{
+    clear: both;
+}
+
+.div::after{
+    content: "";
+    display: table;
+    clear: both;
+}
