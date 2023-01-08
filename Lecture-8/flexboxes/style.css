@@ -1,0 +1,14 @@
+.item{
+    background-color: orangered;
+    width: 200px;
+    height: 200px;
+    color: white;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}

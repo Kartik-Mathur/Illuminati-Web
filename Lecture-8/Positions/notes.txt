@@ -1,0 +1,7 @@
+- Positions
+    - relative: Apni current position nahi leave krega aur us position ke respect
+    mei move krega
+    - absolute: Apni layer se bahar aa jaega aur us bahar wali layer mei freely move
+    karega wrt the nearest positioned ancestor.
+    - fixed
+    -

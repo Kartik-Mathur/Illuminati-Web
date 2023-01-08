@@ -102,6 +102,7 @@ a:hover{
     float: left;
     width: 20%;
 }
+
 .nav::after{
     content: "";
     display: table;

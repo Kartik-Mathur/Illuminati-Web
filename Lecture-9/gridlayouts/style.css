@@ -1,0 +1,73 @@
+/* Make the container/parent as grid display to use the properties
+of grid layout */
+.container{
+    display: grid;
+    width: 1200px;
+    /* grid-template-columns: 400px 400px 400px; */
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows: repeat(4, 200px);
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 80px;
+    grid-template-areas: 
+    "one two two two"
+    "three two two two"
+    "four four five six"
+    "four four five six";
+}
+
+
+.item{
+    /* height: 200px; */
+    /* width: 200px; */
+    background-color: orange;
+    color: rgb(13, 61, 13);
+    font-size: 34px;
+    border: 1px solid black;
+}
+
+.item-1{
+    grid-area: one;
+}
+
+.item-2{
+    grid-area: two;
+}
+
+.item-3{
+    grid-area: three;
+}
+
+.item-4{
+    grid-area: four;
+}
+
+.item-5{
+    grid-area: five;
+}
+
+.item-6{
+    grid-area: six;
+}
+
+
+
+/* .item-2{
+    background-color: purple;
+    color: white;
+    grid-column: 2/4;
+    grid-row: 1/4;
+    height: 100%;
+}
+
+.item-5{
+    background-color: yellowgreen;
+    grid-column: 2/4;
+    grid-row: 4/5;
+}
+
+.item-4{
+    grid-row: 3/6;
+    height: 100%;
+    background-color: teal;
+} */

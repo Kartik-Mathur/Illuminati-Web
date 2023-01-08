@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.grandfather, 
+.father, 
+.child {
+    min-height: 150px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* .btn{
+    position: relative;
+    top: 50px;
+    left: 200px;
+} */
+
+.btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.grandfather{
+    position: relative;
+}
+
+.father{
+    position: relative;
+}
+
+.child{
+    position: relative;
+}
+
+/* SETTING THE NAVBAR AT A FIXED PLACE */
+.navbar{
+    height: 20px;
+    padding: 10px;
+    background-color: rgb(58, 163, 128);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.navElement{
+    margin-right: 15px;
+}
+
+.navElement:link{
+    text-decoration: none;
+    color: white;
+}
+
+.navElement:visited{
+    color: white;
+}
+
+.navElement:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.navElement:active{
+    color: white;
+}
+
+.container{
+    width: 900px;
+    margin: auto;
+    margin-top: 80px;
+}
