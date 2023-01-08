@@ -4,7 +4,7 @@ of grid layout */
     display: grid;
     width: 1200px;
     /* grid-template-columns: 400px 400px 400px; */
-    grid-template-columns: repeat(4,300px);
+    grid-template-columns: 2fr repeat(3,1fr);
     grid-template-rows: repeat(4, 200px);
     border: 2px solid black;
     margin: auto;
