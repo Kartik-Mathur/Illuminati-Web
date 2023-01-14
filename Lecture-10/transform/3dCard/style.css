@@ -1,0 +1,35 @@
+/* body{
+    perspective: 2cm;
+}
+
+h1{
+    transform-style: preserve-3d;
+} */
+
+
+.side-a,
+.side-b{
+    height: 400px;
+    width: 250px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.card{
+    height: 400px;
+    width: 250px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.side-a{
+    background-color: greenyellow;
+    position: absolute;
+    z-index: 1;
+}
+
+.side-b{
+    background-color: crimson;
+    position: absolute;
+
+}
