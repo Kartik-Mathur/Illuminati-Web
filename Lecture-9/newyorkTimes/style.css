@@ -120,7 +120,7 @@ body{
 
 /* NEWS SECTION */
 .containerNewsArticles{
-    width: 1400px;
+    width: 1200px;
     margin: auto;
     margin-top: 15px;
 }
@@ -132,11 +132,13 @@ body{
 }
 
 .newsSectionA{
-    width: 66%;
+    float: left;
+    width: 70%;
 }
 
 .newsSectionB{
-    width: 33%;
+    float: right;
+    width: 29%;
 }
 .newSectionA_1{
     padding: 5px;
@@ -191,3 +193,60 @@ li{
     font-size: 10px;
     color: rgb(93, 93, 93);
 }
+.newsSectionB_1{
+    padding: 5px;
+}
+.newsSectionB_1 small{
+    float: right;
+    font-size: 10px;
+    color: rgb(93, 93, 93);
+}
+
+.newSectionB_1Details{
+    width: 80%;
+}
+
+.newSectionB_1Details h2{
+    font-weight: 400;
+    font-family: sans-serif;
+    margin-top: 15px;
+}
+
+.newSectionB_1DetailsPara{
+    font-family: sans-serif;
+    color: rgb(93, 93, 93);
+    margin-top: 15px;
+}
+
+/* newSectionA_2 //////////////////////////////////////*/
+.newSectionA_2{
+    display: grid;
+    grid-template-rows: minmax(30px,1fr) minmax(30px,1fr);
+    grid-template-columns: 4fr 6fr;
+    grid-template-areas: 
+    "news1 news3"
+    "news2 news3";
+    margin-top: 20px;
+}
+
+.secA_2_1,
+.secA_2_2,
+.secA_2_3{
+    /* border: 1px solid black; */
+}
+
+.secA_2_1{
+    grid-area: news1;
+}
+.secA_2_2{
+    grid-area: news2;
+}
+.secA_2_3{
+    grid-area: news3;
+}
+.secA_2_2 h3{
+    margin-top: 5px;
+}
+/* newSectionA_2 //////////////////////////////////////*/
+
+
