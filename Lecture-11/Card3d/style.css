@@ -1,0 +1,42 @@
+body{
+    perspective: 800px;
+}
+
+.side-a,
+.side-b{
+    height: 400px;
+    width: 250px;
+    /* border: 1px solid black; */
+    margin: auto;
+    backface-visibility: hidden;
+}
+
+.card{
+    height: 400px;
+    width: 250px;
+    border: 1px solid black;
+    margin: 50px auto;
+    transition-duration: 2s;
+    transform-style: preserve-3d;
+}
+
+.side-a{
+    background-color: greenyellow;
+    background-image: url('https://femina.wwmindia.com/content/2022/apr/films-11650348142.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.side-b{
+    background-color: rgb(235, 173, 103);
+    position: absolute;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
