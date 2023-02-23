@@ -45,7 +45,8 @@ download('http://movie.com/avengers.mp4')
 .then((compressedMovie)=>{
     return upload(compressedMovie);
 })
-.then(()=>{
+.then((newUrl)=>{
+    console.log(newUrl);
     console.log("All Done");
 })
 .catch(err=>console.log(err));
