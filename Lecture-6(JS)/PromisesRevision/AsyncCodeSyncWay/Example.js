@@ -33,24 +33,18 @@ function upload(compressedFile){
 }
 
 
-let url = 'http://movies.com/avengers.mp4';
+// let url = 'http://movies.com/avengers.mp4';
 
 download(url)
 .then((downloadedFile)=>{
     console.log("Download finish");
     return compress(downloadedFile);
 })
-.catch((err)=>{
-    console.log(err);
-})
 .then((compressedFile)=>{
     console.log("Compression completes");
     // console.log(compressedFile);
     return upload(compressedFile);
 })
-.catch((err)=>{
-    console.log(err);
-}) 
 .then((newUrl)=>{
     console.log("Uploading finish");
     console.log(newUrl);
