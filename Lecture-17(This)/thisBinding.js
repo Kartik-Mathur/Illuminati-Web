@@ -7,6 +7,5 @@ function updatePlacementStatus(studentName,status){
     this.studentName = studentName;
 }
 
-
 updatePlacementStatus("Vaibhav","Adobe");
 updatePlacementStatus("Rishabh","Amazon");

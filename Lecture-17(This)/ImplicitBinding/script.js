@@ -2,21 +2,15 @@ let vaibhav = {
     lastName: 'Sharma',
     age: 19,
     updatePlacementStatus: function(status){
-        this.placementStatus = status;
         console.log(this);
-        
-    }
-}
-
-let sakshi = {
-    lastName: 'Bansal',
-    age: 20,
-    updatePlacementStatus: function(status){
-        this.placementStatus = status;
-        console.log(this);
-        
+        if(this.age>18){
+            this.placement = status;
+        }
+        else{
+            this.placement = 'Not applicable';
+        }
     }
 }
 
 vaibhav.updatePlacementStatus("Adobe");
-sakshi.updatePlacementStatus("Google");
+console.log(vaibhav)
