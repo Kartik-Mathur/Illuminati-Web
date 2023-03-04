@@ -12,9 +12,34 @@ window.onload = function () {
         console.log(task);
 
         // 1. create a li item
+        /*
+            <li class="task task-1">
+                </i>
+                <input type="checkbox">
+                <span class="taskText">Running</span>
+                <div class="btnGrp">
+                    <button class="up"> <i class="fa-sharp fa-solid fa-angle-up"></i> </button>
+                    <button class="down"> <i class="fa-sharp fa-solid fa-arrow-down"></i> </button>
+                    <button class="delete">🗑</button>
+                </div>
+            </li>
+        */
         const li = document.createElement('li');
         // 2. add the task value in it
-        li.innerText = task;
+        let str = `
+        <li class="task task-1">
+                </i>
+                <input type="checkbox">
+                <span class="taskText">${task}</span>
+                <div class="btnGrp">
+                    <button class="up"> <i class="fa-sharp fa-solid fa-arrow-up"></i> </button>
+                    <button class="down"> <i class="fa-sharp fa-solid fa-arrow-down"></i> </button>
+                    <button class="delete"> <i class="fa-solid fa-trash"></i> </button>
+                </div>
+            </li>`
+
+        li.innerHTML = str;
+        
         // 3. append it in tasklist(ul)
         tasklist.appendChild(li);
     })

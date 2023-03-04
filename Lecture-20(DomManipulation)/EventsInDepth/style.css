@@ -46,10 +46,12 @@
     margin: 5px auto;
     background-color: rgb(59, 115, 218);
     box-shadow: 5px 5px 5px #ccc;
+    
 }
 
 .btnGrp{
     float:right;
+    mix-blend-mode: color-burn;
 }
 
 .btnGrp button{
@@ -61,4 +63,5 @@
 ul{
     color: white;
     font-family: sans-serif;
+
 }
