@@ -29,7 +29,7 @@ window.onload = function () {
         let str = `
         <li class="task task-1">
                 </i>
-                <input type="checkbox">
+                <input type="checkbox" class="checkbox">
                 <span class="taskText">${task}</span>
                 <div class="btnGrp">
                     <button class="up"> <i class="fa-sharp fa-solid fa-arrow-up"></i> </button>
@@ -39,8 +39,22 @@ window.onload = function () {
             </li>`
 
         li.innerHTML = str;
-        
+
         // 3. append it in tasklist(ul)
         tasklist.appendChild(li);
+    })
+
+
+    // Checkbox ke click hone ke baad ka kaam
+    // const checkbox = document.querySelector('.checkbox');
+
+    tasklist.addEventListener('click',(ev)=>{
+        console.log(ev.target);
+        // if(ev.target.checked == true){
+        //     ev.target.nextElementSibling.classList.add('lineCut');
+        // }
+        // else{
+        //     ev.target.nextElementSibling.classList.remove('lineCut');
+        // }
     })
 }

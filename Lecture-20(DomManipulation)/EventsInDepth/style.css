@@ -65,3 +65,7 @@ ul{
     font-family: sans-serif;
 
 }
+
+.lineCut{
+    text-decoration: line-through;
+}
