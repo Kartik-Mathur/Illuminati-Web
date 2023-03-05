@@ -69,3 +69,11 @@ ul{
 .lineCut{
     text-decoration: line-through;
 }
+
+li:first-child .btnGrp .up{
+    visibility: hidden;
+}
+
+li:last-child .btnGrp .down{
+    visibility: hidden;
+}

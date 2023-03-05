@@ -5,6 +5,7 @@ window.onload = function () {
     const newtask = document.querySelector('#newtask');
     const btn = document.querySelector('#addtask');
     const tasklist = document.querySelector('#tasklist')
+    tasklist.innerHTML = localStorage.getItem('tasklist');
 
     // Adding event to the btn
     btn.addEventListener('click', (ev) => {
@@ -42,6 +43,8 @@ window.onload = function () {
         // 3. append it in tasklist(ul)
         tasklist.appendChild(li);
         newtask.value = '';
+
+        localStorage.setItem('tasklist',tasklist.innerHTML);
     })
 
 
@@ -75,6 +78,7 @@ window.onload = function () {
             else {
                 ev.target.nextElementSibling.classList.remove('lineCut');
             }
+            localStorage.setItem('tasklist',tasklist.innerHTML);
         }
         else if (delVal) {
             // Clicked delete button
@@ -82,14 +86,36 @@ window.onload = function () {
             // console.log("Delete karna hai");
             // console.log(ev);
             ev.target.parentElement.parentElement.parentElement.remove();
+            localStorage.setItem('tasklist',tasklist.innerHTML);
         }
         else if (upVal) {
             // Up btn
-            console.log("Up karna hai");
+            // console.log("Up karna hai");
+            let currentElement = ev.target.parentElement.parentElement.parentElement;
+            let prevSibling = currentElement.previousElementSibling;
+            let parentList = currentElement.parentElement;
+            
+            console.log(prevSibling);
+            parentList.insertBefore(
+                currentElement,
+                prevSibling
+            )
+            localStorage.setItem('tasklist',tasklist.innerHTML);
         }
         else if (dwnVal) {
             // down
-            console.log("Down karna hai");
+            let currentElement = ev.target.parentElement.parentElement.parentElement;
+            let nextSibling = currentElement.nextElementSibling;
+            let parentList = currentElement.parentElement;
+            
+            // nextSibling ko currentElement se pehle insert kardo, matlab currentElement
+            // neeche chala jaega
+            parentList.insertBefore(
+                nextSibling,
+                currentElement
+            )
+            localStorage.setItem('tasklist',tasklist.innerHTML);
         }
     })
 }
+
