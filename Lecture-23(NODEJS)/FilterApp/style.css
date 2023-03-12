@@ -3,17 +3,21 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background: url('https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000') no-repeat;
+    background-size: cover;
+}
 .container{
     width: 900px;
     margin: auto;
-    border-radius: 10px;
-    
+    /* border-radius: 30px; */
 }
 .header{
     text-align: center;
     padding: 20px;
     color: white;
-    background-color: rgba(148, 75, 221, 0.698);
+    background-color: rgba(221, 44, 44, 0.849);
+    border-radius: 15px;
 }
 h1{
     font-size: 40px;
@@ -30,12 +34,21 @@ h1{
     width: 20px;
 }
 
+.foodList{
+    margin-top: 30px;
+}
+
 .foodItem{
     font-size: 30px;
     list-style: none;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.76);
 }
 
-.increaseFood{
+.increaseFood,
+.decreaseFood{
     border: 1px solid red;
     /* padding: 5px; */
     border-radius: 5px;
@@ -50,8 +63,11 @@ h1{
 .foodCount{
     font-size: 15px;
 }
+.foodPrice{
+    font-size: 20px;
+    margin-right: 20px;
+}
 
 .updateFoodCount{
     float:right;
-
 }
