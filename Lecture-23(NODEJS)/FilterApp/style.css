@@ -45,6 +45,7 @@ h1{
     border-radius: 10px;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.76);
+    margin: 10px 0;
 }
 
 .increaseFood,
@@ -70,4 +71,19 @@ h1{
 
 .updateFoodCount{
     float:right;
+}
+
+.foodName{
+    float: left;
+}
+
+.foodItem::after{
+    content: "";
+    display: table;
+    clear: both
+}
+
+.small{
+    font-size: 13px;
+    font-style: italic;
 }
