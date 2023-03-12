@@ -1,0 +1,14 @@
+let a = 10, b ="Hello World"
+undefined
+obj  = {
+    a,
+    b
+}
+{a: 10, b: 'Hello World'}
+obj 
+{a: 10, b: 'Hello World'}
+obj1 = {
+    a: a,
+    b: b 
+}
+{a: 10, b: 'Hello World'}

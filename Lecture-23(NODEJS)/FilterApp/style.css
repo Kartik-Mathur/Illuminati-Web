@@ -1,0 +1,29 @@
+*{
+    font-family: sans-serif;
+}
+.container{
+    width: 900px;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+.header{
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: rgba(148, 75, 221, 0.698);
+}
+h1{
+    font-size: 40px;
+}
+.filterWays{
+    text-align: center;
+    font-size: 30px;
+}
+
+#vegSign,
+#jainVegSign,
+#nonVegSign{
+    height: 20px;
+    width: 20px;
+}
