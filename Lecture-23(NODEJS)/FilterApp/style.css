@@ -1,5 +1,7 @@
 *{
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .container{
     width: 900px;
@@ -26,4 +28,30 @@ h1{
 #nonVegSign{
     height: 20px;
     width: 20px;
+}
+
+.foodItem{
+    font-size: 30px;
+    list-style: none;
+}
+
+.increaseFood{
+    border: 1px solid red;
+    /* padding: 5px; */
+    border-radius: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    /* padding-bottom: 7px; */
+    cursor: pointer;
+}
+.foodCount{
+    font-size: 15px;
+}
+
+.updateFoodCount{
+    float:right;
+
 }
