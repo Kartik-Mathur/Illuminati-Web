@@ -1,4 +1,5 @@
 console.log("Im inside lib1");
+
 function add(a,b){
     return a+b;
 }
@@ -13,5 +14,7 @@ function changePassword(){
 
 module.exports =  {
     add,
-    subtract
+    subtract,
+    changePassword
 }
+

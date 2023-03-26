@@ -1,4 +1,6 @@
 const {add,subtract} = require('./lib1');
+// const {changePassword} = require('./lib1');
+// const lib1 = require('./lib1');
 
 // console.log(lib1);
 

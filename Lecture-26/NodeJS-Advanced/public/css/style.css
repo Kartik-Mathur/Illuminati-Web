@@ -1,0 +1,12 @@
+*{
+    font-family: sans-serif;
+}
+
+p{
+    line-height: 1.5;
+    color: red;
+}
+
+li{
+    color: blueviolet;
+}
