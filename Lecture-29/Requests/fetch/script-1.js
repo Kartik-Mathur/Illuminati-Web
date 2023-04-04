@@ -3,7 +3,7 @@ const btn = document.querySelector('.btn');
 const factsList = document.querySelector('.factsList');
 
 function addDataToList(data) {
-    data.forEach((d)=>{
+    data.forEach((d) => {
         console.log(d)
         const li = document.createElement('li');
         li.innerText = d;
@@ -29,13 +29,13 @@ function getData(URL) {
 
 function solve() {
     getData(URL)
-        .then((data)=>{
+        .then((data) => {
             console.log(data);
-            const billiKeFacts = data.map(d=>d.text);
+            const billiKeFacts = data.map(d => d.text);
             console.log(billiKeFacts);
             addDataToList(billiKeFacts);
         })
-        .catch(err=>console.log(err));
+        .catch(err => console.log(err));      
 }
 
 btn.addEventListener('click', (ev) => {
