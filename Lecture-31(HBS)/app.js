@@ -13,6 +13,7 @@ app.use(bodyparser.json());
 // let todos = [];
 
 app.get('/gettask', async (req, res) => {
+    console.log("Inside get task");
     try{
         let data = await MyDB.getTodos();
         console.log(data);
@@ -36,6 +37,16 @@ app.post('/addtask', async (req, res) => {
 
     }
     
+})
+
+app.get('/deletetask',(req,res)=>{
+    const {id} = req.query;
+    console.log(id);
+    MyDB.deleteTask(id)
+        .then(()=>{
+            res.redirect('/gettask');
+        })
+        .catch(err=>res.send("Delete mei error aa gaya"))
 })
 
 app.listen(PORT, () => {

@@ -43,15 +43,30 @@ class MyDB {
                 })
         })
     }
+
+    static deleteTask(id){
+        return new Promise((resolve,reject)=>{
+            fs.readFile(
+                filePath,{
+                    encoding:'utf-8'
+                },
+                (err,data)=>{
+                    if(err) return reject(err);
+                    let todos = JSON.parse(data);
+                    let newTodos = todos.filter((todo)=>todo.id!=id);
+                    fs.writeFile(
+                        filePath,
+                        JSON.stringify(newTodos),
+                        (err)=>{
+                            if(err) return reject(err)
+                            resolve("Sab kuch badhiya ho gaya");
+                        }
+                    )
+                }
+            )
+        })
+    }
 }
-
-let obj = [
-    {name:'Coding',id:1},
-    {name:'Swimming',id:2},
-    {name:'Dancing',id:3},
-]
-
-console.log(JSON.stringify(obj));
 
 module.exports = MyDB;
 // const MyDB = require('script.js');

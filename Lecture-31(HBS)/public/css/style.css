@@ -1,0 +1,64 @@
+.item{
+    /* border: 1px solid black; */
+    width: 70%;
+    list-style: none;
+    padding: 5px;
+    /* margin: auto; */
+}
+.item::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.header{
+    width: 100%;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+#newTask{
+    width: 70%;
+}
+
+#newTask,
+.btn{
+    padding: 5px;
+    font-size: 18px;
+}
+
+.listButtons{
+    float: right;
+}
+
+.listText{
+    float: left;
+}
+
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.upArrow,
+.downArrow,
+.deleteTask{
+    cursor: pointer;
+    margin: 10px;
+}
+
+.item:first-child .listButtons .upArrow{
+    visibility: hidden;
+}
+
+.item:last-child .listButtons .downArrow{
+    visibility: hidden;
+}
+
+.myform{
+    display: inline-block;
+}

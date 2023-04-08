@@ -7,19 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>Todos</h1>
-
-    <form action="/addtask" method="POST">
-        <input type="text" name="newTask" id="newTask">
-        <button class="btn" type="submit">Add Task</button>
-    </form>
-
-    <ul class="taskList">
-        
-    </ul>
+    
+    <div class="container">
+        <header class="header">
+            <h1>Todos</h1>
+            <form action="/addtask" method="POST">
+                <input type="text" name="newTask" id="newTask">
+                <button class="btn" type="submit">Add Task</button>
+            </form>
+        </header>
+    
+        <ul class="taskList">
+            <!-- <li class="item">
+                <div class="listText">Test</div>
+                <div class="listButtons">
+                    <span class="upArrow">↑</span>
+                    <span class="downArrow">↓</span>
+                    <span class="deleteTask">🗑</span>
+                </div>
+            </li> -->
+        </ul>
+    </div>
 
     <script src="./js/script.js"></script>
 </body>

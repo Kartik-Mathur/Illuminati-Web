@@ -1,14 +1,1 @@
-[
-    {
-        "name": "Swimming",
-        "id": "512af123-6750-467f-a58f-632331d067dc"
-    },
-    {
-        "name": "Dancing",
-        "id": "8e9b9522-3694-4051-bc7e-871ad1e283a2"
-    },
-    {
-        "name": "Coding",
-        "id": "96129dab-892e-428d-8954-12b08b7062dc"
-    }
-]
+[{"name":"Swimming","id":"b180f685-73be-4435-bd77-fad8833e8dc5"},{"name":"Singing","id":"309e2663-3686-4458-9108-5f3fa3319966"}]
