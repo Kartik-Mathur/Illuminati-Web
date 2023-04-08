@@ -17,6 +17,7 @@ app.get('/gettask',(req,res)=>{
 })
 
 app.post('/addtask',(req,res)=>{
+    
     console.log(req.body.task);
     todos.push(req.body.task);
     res.redirect('/gettask');
