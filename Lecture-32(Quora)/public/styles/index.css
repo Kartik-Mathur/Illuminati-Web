@@ -1,0 +1,33 @@
+.navLink{
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.navBar{
+    background-color: aqua;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.navItems{
+    display: flex;
+    justify-content: center;
+    background-color: cornflowerblue;
+    width: 80%;
+    margin: auto;
+    /* width: 50%;
+    margin: auto; */
+}
+
+.question,
+.image{
+    width: 100%;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
