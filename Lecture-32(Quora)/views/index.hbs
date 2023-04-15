@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    ${user[0].username}, ${user[0].id}
+    {{username}} 
     <nav class="navBar">
         <div class="navItems">
             <a href="/" class="homeLink navLink">🏡</a>
@@ -43,15 +43,21 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    
                     <input type="text" id="question" class="question" placeholder="Question"><br><br>
                     <!-- <input type="text" class="image" placeholder="Image Link"><br> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input id="userId" type="hidden" userId="{{id}}">
                     <button type="button" class="btn btn-primary" id="addQuestion">Post</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="questionList">
+
     </div>
 
     <script src="js/questions.js"></script>
