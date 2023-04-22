@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: orange;
+}
+
+.navBar{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.navItem{
+    margin-right: 20px;
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: blue;
+}

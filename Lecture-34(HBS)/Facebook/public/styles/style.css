@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: orange;
+}
+
+.navBar{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.navItem{
+    margin-right: 20px;
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+
+.postForm{
+    width: 500px;
+    border: 1px solid black;
+    background-color: rgb(58, 157, 182);
+    color: white;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.postFormItem{
+    margin-right: 5px;
+    margin: 10px 0px;
+}
+
+.card{
+    width: 200px;
+    margin: 20px auto;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.cardImage{
+    width: 100%;
+}
+
+.cardList{
+    display: inline-block;  
+}

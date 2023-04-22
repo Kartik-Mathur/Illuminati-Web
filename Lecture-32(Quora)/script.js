@@ -8,7 +8,7 @@ const Questions = require('./database/scripts/questions');
 
 app.use(bodyparser.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/',express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'hbs');
 
 const Users = require('./database/scripts/users');
@@ -29,7 +29,6 @@ app.post('/login', (req, res, next) => {
         .catch(err => {
             next();
         })
-
 })
 
 app.post('/signup', (req, res) => {
@@ -80,6 +79,7 @@ app.get('/getquestions',(req,res,next)=>{
 app.use((req, res, next) => {
     res.sendFile(path.join(__dirname, 'pages', 'error.html'));
 })
+
 
 
 app.listen(PORT, () => {

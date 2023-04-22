@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    {{>navbar}}
+
+    <h1>My App</h1>
+    {{#each posts as |p|}}
+        <li class="cardList">
+            <div class="card">
+                <div class="cardTitle">{{p.title}}</div>
+                <img id="cardImage"  class="cardImage" src="{{p.imageUrl}}" alt="imageUrl">
+                <div class="caption">{{p.caption}}</div>
+                <button> <a href="/deleteitem?id={{p.id}}">Delete Item</a> </button>
+            </div>
+        </li>
+    {{/each}}
+</body>
+</html>
