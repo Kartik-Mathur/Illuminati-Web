@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/../styles/style.css">
+</head>
+
+<body>
+    {{> navbar}}
+
+    <form class="postForm" action="/posts/createpost" method="POST">
+        <label class="postFormItem" for="title">Title: </label>
+        <input class="postFormItem" name="title" id="title" type="text" src="title" alt="title" placeholder="Enter Title"><br>
+        <label class="postFormItem" for="image">Image: </label>
+        <input class="postFormItem" name="imageUrl" id="image" type="text" src="img" alt="img"  placeholder="Enter Image"><br>
+        <label class="postFormItem" for="caption">Caption: </label>
+        <input class="postFormItem" name="caption" id="caption" type="text" src="caption" alt="caption"  placeholder="Enter Image"><br>
+
+        <button type="submit">Create Post</button>
+    </form>
+</body>
+
+</html>
