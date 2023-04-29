@@ -1,0 +1,31 @@
+[{
+    "name":"Laptop",
+    "price": 400,
+    "description":"This is an awesome Laptop",
+    "color":"Red"
+},{
+    "name":"Laptop",
+    "price": 400,
+    "processor":"i-9"
+    "color":"Red"
+},
+{
+    "name":"PEN",
+    "price": 4,
+    "description":"This is an awesome Pen"
+},
+{
+    "name":"Mobile",
+    "price": 4,
+    "description":"This is an awesome Mobile",
+    "quantity":5,
+    "_id":"my-new-product"
+},
+{
+    "name":"PEN",
+    "price": 4,
+    "description":"This is an awesome Pen",
+    "date": new Date(),
+    "timestamp": new Timestamp()
+}
+]

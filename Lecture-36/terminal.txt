@@ -1,0 +1,1365 @@
+test> show dbs;
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB
+test> use products;
+switched to db products
+products> show dbs;
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB
+products> db.products.insertOne({
+...     "name":"Book",
+...     "price": 40.12,
+...     "description":"This is an awesome book"
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId("644ce841f24b157509940e0c")
+}
+products> db.products.insertMany([{
+...     "name":"Laptop",
+...     "price": 400,
+...     "description":"This is an awesome Laptop"
+... },
+... {
+...     "name":"PEN",
+...     "price": 4,
+...     "description":"This is an awesome Pen"
+... }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ce9c8f24b157509940e0d"),
+    '1': ObjectId("644ce9c8f24b157509940e0e")
+  }
+}
+products> db.products.find();
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Book',
+    price: 40.12,
+    description: 'This is an awesome book'
+  },
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0d"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  }
+]
+products> db.products.findOne({name:"Book"});
+{
+  _id: ObjectId("644ce841f24b157509940e0c"),
+  name: 'Book',
+  price: 40.12,
+  description: 'This is an awesome book'
+}
+products> db.products.findOne({_id: ObjectId("644ce841f24b157509940e0c")});
+{
+  _id: ObjectId("644ce841f24b157509940e0c"),
+  name: 'Book',
+  price: 40.12,
+  description: 'This is an awesome book'
+}
+products> db.products.insertOne({
+...     "name":"Mobile",
+...     "price": 4,
+...     "description":"This is an awesome Mobile",
+...     "quantity":5,
+...     "_id":"my-new-product"
+... });
+{ acknowledged: true, insertedId: 'my-new-product' }
+products> db.products.find();
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Book',
+    price: 40.12,
+    description: 'This is an awesome book'
+  },
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0d"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: 'my-new-product',
+    name: 'Mobile',
+    price: 4,
+    description: 'This is an awesome Mobile',
+    quantity: 5
+  }
+]
+products> db.products.insertOne({ "name": "Mobile", "price": 4, "description": "This is an awesome Mobile", "quantity": 5, "_id": "my-new-product" });
+MongoServerError: E11000 duplicate key error collection: products.products index: _id_ dup key: { _id: "my-new-product" }
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb6ef24b157509940e0f"),
+    '1': ObjectId("644ceb6ef24b157509940e10")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb74f24b157509940e11"),
+    '1': ObjectId("644ceb74f24b157509940e12")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb75f24b157509940e13"),
+    '1': ObjectId("644ceb75f24b157509940e14")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb75f24b157509940e15"),
+    '1': ObjectId("644ceb75f24b157509940e16")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb76f24b157509940e17"),
+    '1': ObjectId("644ceb76f24b157509940e18")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb76f24b157509940e19"),
+    '1': ObjectId("644ceb76f24b157509940e1a")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb77f24b157509940e1b"),
+    '1': ObjectId("644ceb77f24b157509940e1c")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb77f24b157509940e1d"),
+    '1': ObjectId("644ceb77f24b157509940e1e")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb77f24b157509940e1f"),
+    '1': ObjectId("644ceb77f24b157509940e20")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb78f24b157509940e21"),
+    '1': ObjectId("644ceb78f24b157509940e22")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb78f24b157509940e23"),
+    '1': ObjectId("644ceb78f24b157509940e24")
+  }
+}
+products> db.products.insertMany([{ "name": "Laptop", "price": 400, "description": "This is an awesome Laptop" }, { "name": "PEN", "price": 4, "description": "This is an awesome Pen" }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("644ceb79f24b157509940e25"),
+    '1': ObjectId("644ceb79f24b157509940e26")
+  }
+}
+products> db.products.find();
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Book',
+    price: 40.12,
+    description: 'This is an awesome book'
+  },
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0d"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: 'my-new-product',
+    name: 'Mobile',
+    price: 4,
+    description: 'This is an awesome Mobile',
+    quantity: 5
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e0f"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e10"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e11"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e12"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e13"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e14"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e15"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e16"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e17"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e18"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e19"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e1a"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1b"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1c"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1d"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  }
+]
+Type "it" for more
+products> it
+[
+  {
+    _id: ObjectId("644ceb77f24b157509940e1f"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e20"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e21"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e22"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e23"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e24"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e25"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e26"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  }
+]
+products> db.products.find().forEach(d=>printjson(d))
+{
+  _id: ObjectId("644ce841f24b157509940e0c"),
+  name: 'Book',
+  price: 40.12,
+  description: 'This is an awesome book'
+}
+{
+  _id: ObjectId("644ce9c8f24b157509940e0d"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ce9c8f24b157509940e0e"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: 'my-new-product',
+  name: 'Mobile',
+  price: 4,
+  description: 'This is an awesome Mobile',
+  quantity: 5
+}
+{
+  _id: ObjectId("644ceb6ef24b157509940e0f"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb6ef24b157509940e10"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb74f24b157509940e11"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb74f24b157509940e12"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb75f24b157509940e13"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb75f24b157509940e14"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb75f24b157509940e15"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb75f24b157509940e16"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb76f24b157509940e17"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb76f24b157509940e18"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb76f24b157509940e19"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb76f24b157509940e1a"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb77f24b157509940e1b"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb77f24b157509940e1c"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb77f24b157509940e1d"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb77f24b157509940e1e"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb77f24b157509940e1f"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb77f24b157509940e20"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb78f24b157509940e21"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb78f24b157509940e22"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb78f24b157509940e23"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb78f24b157509940e24"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+{
+  _id: ObjectId("644ceb79f24b157509940e25"),
+  name: 'Laptop',
+  price: 400,
+  description: 'This is an awesome Laptop'
+}
+{
+  _id: ObjectId("644ceb79f24b157509940e26"),
+  name: 'PEN',
+  price: 4,
+  description: 'This is an awesome Pen'
+}
+
+products> db.products.find({name:"Laptop"})
+[
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0d"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e0f"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e11"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e13"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e15"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e17"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e19"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1b"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1d"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1f"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e21"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e23"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e25"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop'
+  }
+]
+products> db.products.insertOne({
+...     "name":"PEN",
+...     "price": 4,
+...     "description":"This is an awesome Pen",
+...     "date": "new Timestamp()"
+... });
+{
+  acknowledged: true,
+  insertedId: ObjectId("644cec95f24b157509940e27")
+}
+products> db.products.find({name:"Pen"})
+
+products> db.products.find({name:"PEN"})
+[
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e10"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e12"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e14"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e16"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e18"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e1a"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1c"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e20"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e22"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e24"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e26"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644cec95f24b157509940e27"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: 'new Timestamp()'
+  }
+]
+products> db.products.insertOne({
+...     "name":"PEN",
+...     "price": 4,
+...     "description":"This is an awesome Pen",
+...     "date": new Timestamp()
+... });
+{
+  acknowledged: true,
+  insertedId: ObjectId("644cecb8f24b157509940e28")
+}
+products> db.products.find({name:"PEN"})
+[
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e10"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e12"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e14"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e16"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e18"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e1a"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1c"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e20"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e22"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e24"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e26"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644cec95f24b157509940e27"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: 'new Timestamp()'
+  },
+  {
+    _id: ObjectId("644cecb8f24b157509940e28"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: Timestamp({ t: 1682762936, i: 1 })
+  }
+]
+products> db.products.insertOne({
+...     "name":"PEN",
+...     "price": 4,
+...     "description":"This is an awesome Pen",
+...     "date": new Date(),
+... 
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId("644ceceef24b157509940e29")
+}
+products> db.products.find({name:"PEN"})
+[
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e10"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e12"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e14"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e16"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e18"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e1a"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1c"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e20"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e22"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e24"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e26"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644cec95f24b157509940e27"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: 'new Timestamp()'
+  },
+  {
+    _id: ObjectId("644cecb8f24b157509940e28"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: Timestamp({ t: 1682762936, i: 1 })
+  },
+  {
+    _id: ObjectId("644ceceef24b157509940e29"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: ISODate("2023-04-29T10:09:50.054Z")
+  }
+]
+products> db.products.find({name:"PEN"}).pretty()
+[
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e10"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e12"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e14"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e16"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e18"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e1a"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1c"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e20"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e22"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e24"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e26"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644cec95f24b157509940e27"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: 'new Timestamp()'
+  },
+  {
+    _id: ObjectId("644cecb8f24b157509940e28"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: Timestamp({ t: 1682762936, i: 1 })
+  },
+  {
+    _id: ObjectId("644ceceef24b157509940e29"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: ISODate("2023-04-29T10:09:50.054Z")
+  }
+]
+products> db.products.delete({name:"Laptop"});
+TypeError: db.products.delete is not a function
+products> db.products.deleteMany({name:"Laptop"});
+{ acknowledged: true, deletedCount: 13 }
+products> db.products.find().pretty()
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Book',
+    price: 40.12,
+    description: 'This is an awesome book'
+  },
+  {
+    _id: ObjectId("644ce9c8f24b157509940e0e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: 'my-new-product',
+    name: 'Mobile',
+    price: 4,
+    description: 'This is an awesome Mobile',
+    quantity: 5
+  },
+  {
+    _id: ObjectId("644ceb6ef24b157509940e10"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb74f24b157509940e12"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e14"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb75f24b157509940e16"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e18"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb76f24b157509940e1a"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1c"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e1e"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb77f24b157509940e20"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e22"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb78f24b157509940e24"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644ceb79f24b157509940e26"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen'
+  },
+  {
+    _id: ObjectId("644cec95f24b157509940e27"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: 'new Timestamp()'
+  },
+  {
+    _id: ObjectId("644cecb8f24b157509940e28"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: Timestamp({ t: 1682762936, i: 1 })
+  },
+  {
+    _id: ObjectId("644ceceef24b157509940e29"),
+    name: 'PEN',
+    price: 4,
+    description: 'This is an awesome Pen',
+    date: ISODate("2023-04-29T10:09:50.054Z")
+  }
+]
+products> db.products.deleteMany({name:"PEN"})
+{ acknowledged: true, deletedCount: 16 }
+products> db.products.find().pretty()
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Book',
+    price: 40.12,
+    description: 'This is an awesome book'
+  },
+  {
+    _id: 'my-new-product',
+    name: 'Mobile',
+    price: 4,
+    description: 'This is an awesome Mobile',
+    quantity: 5
+  }
+]
+products> db.products.updateOne({name:"Book"},{$set:{
+...     "name":"Laptop",
+...     "price": 400,
+...     "description":"This is an awesome Laptop",
+...     "color":"Red"
+... }});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+products> db.products.find()
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop',
+    color: 'Red'
+  },
+  {
+    _id: 'my-new-product',
+    name: 'Mobile',
+    price: 4,
+    description: 'This is an awesome Mobile',
+    quantity: 5
+  }
+]
+products> db.products.updateOne({name:"Laptop",{$set:{
+Uncaught:
+SyntaxError: Unexpected token (1:37)
+
+> 1 | db.products.updateOne({name:"Laptop",{$set:{
+    |                                      ^
+  2 |
+
+products>     "name":"Laptop",
+Uncaught:
+SyntaxError: Missing semicolon. (1:10)
+
+> 1 |     "name":"Laptop",
+    |           ^
+  2 |
+
+products>     "price": 400,
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 |     "price": 400,
+    |            ^
+  2 |
+
+products>     "processor":"i-9",
+Uncaught:
+SyntaxError: Missing semicolon. (1:15)
+
+> 1 |     "processor":"i-9",
+    |                ^
+  2 |
+
+products>     "color":"Red"
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 |     "color":"Red"
+    |            ^
+  2 |
+
+products> db.products.updateOne({name:"Laptop",{$set:{
+Uncaught:
+SyntaxError: Unexpected token (1:37)
+
+> 1 | db.products.updateOne({name:"Laptop",{$set:{
+    |                                      ^
+  2 |
+
+products>     "name":"Laptop",
+Uncaught:
+SyntaxError: Missing semicolon. (1:10)
+
+> 1 |     "name":"Laptop",
+    |           ^
+  2 |
+
+products>     "price": 400,
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 |     "price": 400,
+    |            ^
+  2 |
+
+products>     "processor":"i-9",
+Uncaught:
+SyntaxError: Missing semicolon. (1:15)
+
+> 1 |     "processor":"i-9",
+    |                ^
+  2 |
+
+products>     "color":"Red"
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 |     "color":"Red"
+    |            ^
+  2 |
+
+products> db.products.updateOne({name:"Laptop"},{$set:{
+...     "name":"Laptop",
+...     "price": 400,
+...     "processor":"i-9",
+...     "color":"Red"
+... }});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+products> db.products.find()
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Laptop',
+    price: 400,
+    description: 'This is an awesome Laptop',
+    color: 'Red',
+    processor: 'i-9'
+  },
+  {
+    _id: 'my-new-product',
+    name: 'Mobile',
+    price: 4,
+    description: 'This is an awesome Mobile',
+    quantity: 5
+  }
+]
+products> db.products.updateOne({ name: "Laptop" }, { $set: { "price":} });
+Uncaught:
+SyntaxError: Unexpected token (1:60)
+
+> 1 | db.products.updateOne({ name: "Laptop" }, { $set: { "price":} });
+    |                                                             ^
+  2 |
+
+products> db.products.updateOne({ name: "Laptop" }, { $set: { "price":5000} });
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+products> db.products.find()
+[
+  {
+    _id: ObjectId("644ce841f24b157509940e0c"),
+    name: 'Laptop',
+    price: 5000,
+    description: 'This is an awesome Laptop',
+    color: 'Red',
+    processor: 'i-9'
+  },
+  {
+    _id: 'my-new-product',
+    name: 'Mobile',
+    price: 4,
+    description: 'This is an awesome Mobile',
+    quantity: 5
+  }
+]
